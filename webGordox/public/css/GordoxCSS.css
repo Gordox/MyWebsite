@@ -1,0 +1,22 @@
+.headerImage{
+  background-image: url("http://demos.cryoutcreations.eu/wordpress/fluida/wp-content/uploads/2013/02/jellyfish-698521-1920x250.jpg");
+  background-size: cover;
+  height:150px;
+}
+
+.loginText {
+  text-align: right;
+}
+
+.no-padding {
+  padding:0!important;
+}
+
+.BodyBackground{
+  /*background-color: #595959;*/
+}
+
+.MyFooter{
+
+}
+/*--Navbar color #333333 Highlight color #CC6600*/
