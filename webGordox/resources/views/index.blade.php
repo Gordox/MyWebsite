@@ -7,7 +7,7 @@
 
     <!--About me -->
     <div>
-      Hej
+      Hej col-sm-9
     </div>
 
     <!--Image slider-->

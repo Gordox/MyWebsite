@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto" >
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                   <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -80,7 +80,7 @@
     <footer class="text-muted MyFooter">
       <div class="container no-padding">
         <p class="float-right">
-          <a href="#">Back to top</a> <!--Make a buttom if it later -->
+          <a href="#">Back to top</a> <!--Make a buttom of it later -->
         </p>
         <p>&copy;2018 By Anton Svensson</p>
       </div>
