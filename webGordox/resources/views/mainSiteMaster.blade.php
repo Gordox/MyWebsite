@@ -53,7 +53,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Professional work</a>
-                    <a class="dropdown-item" href="#">Hobby work</a>
+                    <a class="dropdown-item" href="/hobby-works">Hobby work</a>
                     <a class="dropdown-item" href="#">Papers / Docuemts</a>
                   </div>
                 </li>
@@ -79,10 +79,20 @@
    <!-- Bottom -->
     <footer class="text-muted MyFooter">
       <div class="container no-padding">
-        <p class="float-right">
-          <a href="#">Back to top</a> <!--Make a buttom of it later -->
-        </p>
-        <p>&copy;2018 By Anton Svensson</p>
+        <div style="background-color: #595959;">
+          <div class="row">
+
+            <div class="col-sm-6">
+              <p>&copy;2018 By Anton Svensson</p>
+            </div>
+
+            <div class="col-sm-6">
+              <p class="float-right">
+                <a href="#" class="btn-secondary active" role="button">Back to top</a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 

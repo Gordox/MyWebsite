@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProWorksTable extends Migration
+class CreateWorksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,16 @@ class CreateProWorksTable extends Migration
      */
     public function up()
     {
-        Schema::create('proworks', function (Blueprint $table) {
+        Schema::create('works', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('work_type');
+            $table->string('title');
+            $table->text('long_description');
+            $table->text('short_description');
+            $table->string('tags');
+            $table->string('img_url');
+            $table->string('vid_url');  //optional use
+            $table->string('download_url'); //optional use
             $table->timestamps();
         });
     }

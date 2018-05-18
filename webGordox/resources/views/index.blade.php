@@ -2,12 +2,24 @@
 
 @section('content')
 <div class="row">
+
   <!-- Left side content -->
   <div class="col-sm-9">
 
     <!--About me -->
-    <div>
-      Hej col-sm-9
+    <div class="row"> <!-- add padding-->
+
+      <!--Image of me-->
+      <div class="col-sm-4">
+        <img src="http://3.bp.blogspot.com/-AbZ0jNwaazg/UHP1lMdqWBI/AAAAAAAAAO0/kdG27DNnjcw/s320/normal_naruto_uzumaki_by_meshugene_render_by_maksitobi.png"
+         alt="Hej col-sm-3">
+      </div>
+
+      <!--Bio of me-->
+      <div class="col-sm-8">
+        <h5>Hello there</h5>
+        <p>{{$anton->description}}</p>
+      </div>
     </div>
 
     <!--Image slider-->
@@ -70,8 +82,37 @@
 
     <!-- Recent update slider -->
     <div>
-      col-sm-3
+
+      <h4 class="text-center border-bottom">Recent updates</h4>
+
+      <div class="justify-content-start" id="leftCol">
+
+        @foreach ($works as $work)
+        <div class="card box-shadow">
+          <img class="card-img-top" src="https://www.dagonuniversity.edu.mm/wp-content/uploads/2016/02/sample-img-250x200.jpg" alt="Card image cap">
+
+          <div class="card-body">
+            <p class="card-text">
+              <h4>{{$work->title}}</h4>
+              {{$work->short_description}}
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        @endforeach
+
+      </div>
     </div>
+
   </div>
 
 </div>

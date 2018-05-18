@@ -15,7 +15,11 @@ class CreateAntonTable extends Migration
     {
         Schema::create('anton', function (Blueprint $table) {
             $table->increments('id');
-            
+            $table->string('name');
+            $table->text('description');
+            $table->text('age');
+            $table->string('code_tags');
+            $table->string('img_url');
             $table->timestamps();
         });
     }
