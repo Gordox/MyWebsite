@@ -4,7 +4,7 @@
 <div class="row">
 
   <!-- Left side content -->
-  <div class="col-sm-9">
+  <div class="col-sm-9 pt-3 border-right">
 
     <!--About me -->
     <div class="row"> <!-- add padding-->
@@ -18,7 +18,10 @@
       <!--Bio of me-->
       <div class="col-sm-8">
         <h5>Hello there</h5>
-        <p>{{$anton->description}}</p>
+        <div class="border rounded ">
+          <p class="ml-2">{{$anton->description}}</p>
+        </div>
+
       </div>
     </div>
 

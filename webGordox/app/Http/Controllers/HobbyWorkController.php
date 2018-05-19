@@ -9,10 +9,10 @@ class HobbyWorkController extends Controller
 {
   public function index()
   {
-    $title = "Hobby projects";
-    $hobbyworks = DB::table('works')->where('work_type', 'hb')->get();
+    $title = "Hobby works";
+    $hobbyworks = DB::table('works')->get();
 
-    return view('works',["title" => $title],["hobbyworks" => $hobbyworks]);
+    return view('ShowAllWorks',["title" => $title],["works" => $hobbyworks]);
   }
 
   public function create()

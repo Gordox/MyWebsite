@@ -13,3 +13,6 @@
 
 Route::get('/', 'IndexController@index');
 Route::get('/hobby-works', 'HobbyWorkController@index');
+Route::get('/professional-works', 'ProWorkController@index');
+Route::get('/blog', 'BlogWorkController@index');
+Route::get('/contact', 'ContactController@index');

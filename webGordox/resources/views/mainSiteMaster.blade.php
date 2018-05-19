@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Empty for now</title>
+    <title>Anton's website</title>
     <!--Test website icon-->
     <link rel="icon" href="https://getbootstrap.com/favicon.ico">
     <!-- My CSS files -->
@@ -44,24 +44,24 @@
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto" >
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home </a>
                 </li>
                   <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Works
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Professional work</a>
+                    <a class="dropdown-item" href="/professional-works">Professional work</a>
                     <a class="dropdown-item" href="/hobby-works">Hobby work</a>
                     <a class="dropdown-item" href="#">Papers / Docuemts</a>
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
+                  <a class="nav-link" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="/contact">Contact</a>
                 </li>
               </ul>
             </div>
@@ -81,15 +81,11 @@
       <div class="container no-padding">
         <div style="background-color: #595959;">
           <div class="row">
-
-            <div class="col-sm-6">
-              <p>&copy;2018 By Anton Svensson</p>
+            <div class="col ">
+              <p class="ml-2">Copyright &copy;2018 By Anton Svensson</p>
             </div>
-
-            <div class="col-sm-6">
-              <p class="float-right">
-                <a href="#" class="btn-secondary active" role="button">Back to top</a>
-              </p>
+            <div class="col ">
+              <a href=" " class="float-right mr-2">Back to top</a>
             </div>
           </div>
         </div>
