@@ -16,19 +16,19 @@
         <img src="" alt="Email">
       </a>
 
-      <a  target="_blank" href="www.linkedin.com/in/anton-svensson">
+      <a  target="_blank" href="http://www.linkedin.com/in/anton-svensson">
         <img src="" alt="LinkIn">
       </a>
 
-      <a target="_blank"  href="www.twitter/DsGordox">
+      <a target="_blank"  href="http://www.twitter.com/DsGordox">
         <img src="" alt="Twitter">
       </a>
 
-      <a target="_blank" href="www.youtube.com/antonsvensson94">
+      <a target="_blank" href="http://www.youtube.com/antonsvensson94">
         <img src="" alt="YouTube">
       </a>
 
-      <a target="_blank" href="www.github.com/Gordox">
+      <a target="_blank" href="http://www.github.com/Gordox">
         <img src="" alt="Github">
       </a>
     </div>
@@ -42,9 +42,10 @@
     <div class="row">
       <div class="col">
 
-        <img src="" alt="IMG OF ME">
+        <img src="{{$anton->img_url}}"
+         alt="IMG OF ME">
         <div class="mt-1">
-          <p>Name: Anton Svensson</p>
+          <p>Name: {{$anton->name}}</p>
           <p>Email: antonsvensson1994@gmail.com</p>
           <p>Location: Sweden</p>
         </div>

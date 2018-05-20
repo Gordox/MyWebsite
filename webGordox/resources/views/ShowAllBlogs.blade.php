@@ -7,7 +7,7 @@
   <div class="col ml-2">
     <h2>{{$title}}</h2>
   </div>
-  <div class="col mt-2 mr-2">
+  <div class="col mt-1 mr-2">
     <button type="button" class="btn btn-primary float-right">Add blog page</button>
   </div>
 </div>

@@ -20,4 +20,8 @@
 
 }
 
+.Sidescroller{
+  height: 550px;
+  overflow-y: scroll;
+}
 /*--Navbar color #333333 Highlight color #CC6600*/

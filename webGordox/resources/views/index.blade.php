@@ -4,15 +4,14 @@
 <div class="row">
 
   <!-- Left side content -->
-  <div class="col-sm-9 pt-3 border-right">
+  <div class="col-sm-9 mt-3 mb-3 border-right">
 
     <!--About me -->
     <div class="row"> <!-- add padding-->
 
       <!--Image of me-->
       <div class="col-sm-4">
-        <img src="http://3.bp.blogspot.com/-AbZ0jNwaazg/UHP1lMdqWBI/AAAAAAAAAO0/kdG27DNnjcw/s320/normal_naruto_uzumaki_by_meshugene_render_by_maksitobi.png"
-         alt="Hej col-sm-3">
+        <img src="{{$anton->img_url}}" alt="Hej">
       </div>
 
       <!--Bio of me-->
@@ -88,7 +87,7 @@
 
       <h4 class="text-center border-bottom">Recent updates</h4>
 
-      <div class="justify-content-start" id="leftCol">
+      <div class="justify-content-start Sidescroller" id="leftCol">
 
         @foreach ($works as $work)
         <div class="card box-shadow">
