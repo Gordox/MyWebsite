@@ -8,7 +8,8 @@
     <h2>{{$title}}</h2>
   </div>
   <div class="col mt-1 mr-2">
-    <button type="button" class="btn btn-primary float-right">Add blog page</button>
+    <button class="btn btn-primary float-right" type="button"
+     onclick="location.href='/blog/create'">Add blog page</button>
   </div>
 </div>
 

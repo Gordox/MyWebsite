@@ -16,7 +16,7 @@ class BlogWorkController extends Controller
 
   public function create()
   {
-
+    return view('addBlog');
   }
 
   public function store()

@@ -7,17 +7,23 @@ use Illuminate\Http\Request;
 
 class HobbyWorkController extends Controller
 {
+
+
   public function index()
   {
-    $title = "Hobby works";
+    $viewData = new \stdClass();
+    $viewData->title = "Hobby works";
+    $viewData->controller = "HobbyWorkController";
+
     $hobbyworks = DB::table('works')->get();
 
-    return view('ShowAllWorks',["title" => $title],["works" => $hobbyworks]);
+    return view('ShowAllWorks',["viewData" => $viewData],["works" => $hobbyworks]);
   }
 
   public function create()
   {
-
+    $controller = "HobbyWorkController";
+    return view('addWork',["controller" => $controller]);
   }
 
   public function store()

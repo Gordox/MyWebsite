@@ -9,15 +9,19 @@ class ProWorkController extends Controller
 {
   public function index()
   {
-    $title = "Professional work";
+    $viewData = new \stdClass();
+    $viewData->title = "Professional works";
+    $viewData->controller = "ProWorkController";
+
     $proworks = DB::table('works')->get();
 
-    return view('ShowAllWorks',["title" => $title],["works" => $proworks]);
+    return view('ShowAllWorks',["viewData" => $viewData],["works" => $proworks]);
   }
 
   public function create()
   {
-
+    $controller = "ProWorkController";
+    return view('addWork',["controller" => $controller]);
   }
 
   public function store()

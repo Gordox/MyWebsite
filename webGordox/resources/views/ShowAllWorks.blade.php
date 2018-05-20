@@ -3,10 +3,16 @@
 @section('content')
 <div class="row">
   <div class="col ml-2">
-    <h2>{{$title}}</h2>
+    <h2>{{$viewData->title}}</h2>
   </div>
   <div class="col mt-1 mr-2">
-    <button type="button" class="btn btn-primary float-right">Add work page</button>
+    @if($viewData->controller == 'HobbyWorkController')
+    <button class="btn btn-primary float-right" type="button"
+     onclick="location.href='/hobby-works/create'"> Add work page</button>
+    @else
+     <button class="btn btn-primary float-right" type="button"
+      onclick="location.href='/professional-works/create'"> Add work page</button>
+    @endif
   </div>
 </div>
 
