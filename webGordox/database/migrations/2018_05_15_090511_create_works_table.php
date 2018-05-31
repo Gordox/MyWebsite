@@ -15,12 +15,13 @@ class CreateWorksTable extends Migration
     {
         Schema::create('works', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('work_type');
+            $table->string('work_type', 5);
             $table->string('title');
             $table->text('long_description');
             $table->text('short_description');
             $table->string('tags');
-            $table->string('img_url');
+            $table->boolean('has_more_info');
+            $table->boolean('has_download_url');
             $table->string('vid_url');  //optional use
             $table->string('download_url'); //optional use
             $table->timestamps();

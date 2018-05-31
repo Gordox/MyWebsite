@@ -11,7 +11,7 @@ class IndexController extends Controller
   {
     $anton = DB::table('anton')->where('name', 'Anton Svensson')->first(); //Change to a JSON file later
     $works = DB::table('works')->get();
-    
+
     return view('index', ["anton" => $anton],["works" => $works]);
   }
 

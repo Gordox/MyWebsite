@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class BlogWorkController extends Controller
+class ResumeController extends Controller
 {
   public function index()
   {
-    $title = "Blog";
-
-    return view('blogViews/ShowAllBlogs',["title" => $title]);
+    return view('resume');
   }
 
   public function create()
   {
-    return view('blogViews/addBlog');
+
   }
 
   public function store()
@@ -24,7 +21,7 @@ class BlogWorkController extends Controller
 
   }
 
-  public function show($id)
+  public function show()
   {
 
   }

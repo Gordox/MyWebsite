@@ -54,11 +54,16 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="/professional-works">Professional work</a>
                     <a class="dropdown-item" href="/hobby-works">Hobby work</a>
+                    <!-- In Dev face
                     <a class="dropdown-item" href="#">Papers / Docuemts</a>
+                  -->
                   </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/resume">Resume</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/contact">Contact</a>

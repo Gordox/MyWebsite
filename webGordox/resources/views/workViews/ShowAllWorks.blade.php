@@ -36,7 +36,7 @@
       </div>
     </div>
     <!--Work info content-->
-    <p>{{$work->long_description}}</p>
+    <p><<?php echo nl2br($work->long_description);?></p>
 
     <!--Work Tags-->
     <div>
@@ -44,9 +44,16 @@
     </div>
   </div>
 
+  <!--Add if statement later for access of buttons-->
   <div class="col-sm-2">
-    <button class="btn btn-primary" type="button" name="button">Edit</button>
+
+    <button class="btn btn-primary" type="button"
+     onclick="location.href='/hobby-works/edit/{{$work->id}}'" >Edit</button>
+
     <button class="btn btn-primary" type="button" name="button">Download</button>
+
+    <button class="btn btn-primary" type="button"
+     onclick="location.href='/hobby-works/show/{{$work->id}}'" >Read more</button>
   </div>
 </div>
 

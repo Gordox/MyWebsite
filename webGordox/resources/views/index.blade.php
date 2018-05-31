@@ -17,7 +17,7 @@
       <!--Bio of me-->
       <div class="col-sm-8">
         <h5>Hello there</h5>
-        <div class="border rounded ">
+        <div class="border rounded" >
           <p class="ml-2">{{$anton->description}}</p>
         </div>
 
@@ -25,7 +25,7 @@
     </div>
 
     <!--Image slider-->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide mt-1" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
