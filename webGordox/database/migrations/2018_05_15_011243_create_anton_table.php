@@ -17,9 +17,11 @@ class CreateAntonTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
-            $table->text('age');
+            $table->string('age',3);
             $table->string('code_tags');
-            $table->string('img_url');
+            $table->string('location');
+            $table->string('email');
+            $table->text('img_url');
             $table->timestamps();
         });
     }

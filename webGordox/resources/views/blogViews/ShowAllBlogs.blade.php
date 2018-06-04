@@ -16,6 +16,8 @@
 <div class="row">
   <!--Left side-->
   <div class="col-9">
+
+
     <!--Content-->
     <div class="ml-3 mr-1">
       <h2>Title</h2>
@@ -32,20 +34,21 @@
         <div class="col-sm-2">
           <button type="button" class="btn btn-primary float-right">Read more</button>
         </div>
-
       </div>
 
       <!--Style-->
       <div class="border-bottom"></div>
       <p></p>
     </div>
+
+
   </div>
 
   <!--Right side-->
   <div class="col-3 border-left">
     <div class="ml-1 mr-1">
       <h2 class="text-center border-bottom">Archives</h2>
-      <ul>
+      <ul style="list-style-type: none;">
         <li>April 2018</li>
         <li>Mars 2018</li>
         <li>Febuary 2018</li>

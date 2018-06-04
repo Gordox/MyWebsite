@@ -11,7 +11,7 @@
 
       <!--Image of me-->
       <div class="col-sm-4">
-        <img src="{{$anton->img_url}}" alt="Hej">
+        <img src="{{$anton->img_url}}" alt="Error 404, img not found">
       </div>
 
       <!--Bio of me-->

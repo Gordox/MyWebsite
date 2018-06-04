@@ -31,7 +31,9 @@ class ContactController extends Controller
 
   public function edit()
   {
-
+    $anton = DB::table('anton')->where('name', 'Anton Svensson')->first();
+    
+    return view('otherViews/editMyInfo',["anton" => $anton]);
   }
 
   public function update()

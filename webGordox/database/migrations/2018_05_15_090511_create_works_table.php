@@ -20,6 +20,7 @@ class CreateWorksTable extends Migration
             $table->text('long_description');
             $table->text('short_description');
             $table->string('tags');
+            $table->string('img_url');
             $table->boolean('has_more_info');
             $table->boolean('has_download_url');
             $table->string('vid_url');  //optional use

@@ -20,7 +20,7 @@
 <div class="row mt-1">
   <!--WORK IMG-->
   <div class="col-sm-3">
-    <img class="ml-2" src="" alt="WORK IMG HERE">
+    <img class="ml-2" src="{{URL::to('/work_imgs')}}/{{$work->img_url}}" alt="WORK IMG HERE">
   </div>
 
   <!--WORK INFO-->
@@ -45,15 +45,16 @@
   </div>
 
   <!--Add if statement later for access of buttons-->
-  <div class="col-sm-2">
+  <div class="col-sm-2 mb-2">
+    <div class="">
+      <button class="btn btn-primary mb-1" type="button" name="button">Download</button>
 
-    <button class="btn btn-primary" type="button"
-     onclick="location.href='/hobby-works/edit/{{$work->id}}'" >Edit</button>
+      <button class="btn btn-primary mb-1" type="button"
+       onclick="location.href='/hobby-works/show/{{$work->id}}'" >Read more</button> <br/>
 
-    <button class="btn btn-primary" type="button" name="button">Download</button>
-
-    <button class="btn btn-primary" type="button"
-     onclick="location.href='/hobby-works/show/{{$work->id}}'" >Read more</button>
+       <button class="btn btn-primary mb-1" type="button"
+        onclick="location.href='/hobby-works/edit/{{$work->id}}'" >Edit</button>
+    </div>
   </div>
 </div>
 

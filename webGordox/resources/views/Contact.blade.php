@@ -5,6 +5,12 @@
   <div class="col ml-2 mr-1">
     <h2>{{$title}}</h2>
   </div>
+  <!-- Add if here with admin auth -->
+  <div class="col mt-1 mr-2">
+    <button class="btn btn-primary float-right" type="button"
+     onclick="location.href='/contact/edit/me'"> Edit profile</button>
+  </div>
+
 </div>
 
 <div class="row ml-3 mr-3">
@@ -12,7 +18,7 @@
 
     <!--link to link, twitter, YouTube etc-->
     <div>
-      <a data-provider="mail" target="_blank" href="mailto:antonsvensson1994@gmail.com?Site%20Mail">
+      <a data-provider="mail" target="_blank" href="mailto:{{$anton->email}}?Site%20Mail">
         <img src="" alt="Email">
       </a>
 
@@ -46,8 +52,8 @@
          alt="IMG OF ME">
         <div class="mt-1">
           <p>Name: {{$anton->name}}</p>
-          <p>Email: antonsvensson1994@gmail.com</p>
-          <p>Location: Sweden</p>
+          <p>Email: {{$anton->email}}</p>
+          <p>Location: {{$anton->location}}</p>
         </div>
       </div>
 

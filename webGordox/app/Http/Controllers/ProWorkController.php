@@ -14,7 +14,7 @@ class ProWorkController extends Controller
     $viewData->title = "Professional works";
     $viewData->controller = "ProWorkController";
 
-    $proworks = DB::table('works')->get();
+    $proworks = DB::table('works')->where('work_type', 'pro')->get();
 
     return view('workViews/ShowAllWorks',["viewData" => $viewData],["works" => $proworks]);
   }

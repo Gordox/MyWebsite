@@ -34,3 +34,6 @@ Route::post('/professional-works', 'ProWorkController@store');
 
 Route::get('/blog/create', 'BlogWorkController@create');
 Route::post('/blog', 'BlogWorkController@store');
+
+Route::get('/contact/edit/me', 'ContactController@edit');
+Route::put('/contact/edit/me', 'ContactController@update');

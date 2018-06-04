@@ -30,9 +30,9 @@
 <div class="row">
   <div class="col mb-2">
     @if($controller == 'HobbyWorkController')
-      <form class="form-horizontal" role="form" method="POST" action="{{ action('HobbyWorkController@store') }}">
+      <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ action('HobbyWorkController@store') }}">
     @else
-      <form class="form-horizontal" role="form" method="POST" action="{{ action('ProWorkController@store') }}">
+      <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ action('ProWorkController@store') }}">
     @endif
     {{ csrf_field() }}
 
