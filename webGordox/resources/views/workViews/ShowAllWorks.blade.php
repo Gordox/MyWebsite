@@ -19,12 +19,13 @@
 @foreach($works as $work)
 <div class="row mt-1">
   <!--WORK IMG-->
-  <div class="col-sm-3">
-    <img class="ml-2" src="{{URL::to('/work_imgs')}}/{{$work->img_url}}" alt="WORK IMG HERE">
+  <div class="col-sm-4 text-center">
+    <img class="ml-2" src="{{URL::to('/image_files/work_imgs/')}}/{{json_decode($work->img_url)[0]}}"
+     alt="WORK IMG HERE">
   </div>
 
   <!--WORK INFO-->
-  <div class="col-sm-7">
+  <div class="col-sm-8">
     <!--Title and date-->
     <div class="row">
       <div class="col">
@@ -32,33 +33,45 @@
       </div>
 
       <div class="col">
-        <p class="float-right mr-2">Date</p>
+        <p class="float-right mr-2">
+          <?php echo(substr($work->created_at,0, 10));?>
+        </p>
       </div>
     </div>
     <!--Work info content-->
-    <p><<?php echo nl2br($work->long_description);?></p>
+    <p><?php echo nl2br($work->long_description);?></p>
 
     <!--Work Tags-->
-    <div>
-      <p class="float-right mr-2">tags: {{$work->tags}}</p>
+    <div class="row">
+      <div class="col">
+        <p class="float-right mr-2">tags: {{$work->tags}}</p>
+      </div>
     </div>
-  </div>
 
-  <!--Add if statement later for access of buttons-->
-  <div class="col-sm-2 mb-2">
-    <div class="">
-      <button class="btn btn-primary mb-1" type="button" name="button">Download</button>
+    <!-- buttons -->
+    <div class="row" >
+      <div class="col">
+        <div class="float-right">
 
-      <button class="btn btn-primary mb-1" type="button"
-       onclick="location.href='/hobby-works/show/{{$work->id}}'" >Read more</button> <br/>
+          @if($work->has_download_url == 'true')
+          <button class="btn btn-primary mb-1" type="button" name="button">Download</button>
+          @endif
 
-       <button class="btn btn-primary mb-1" type="button"
-        onclick="location.href='/hobby-works/edit/{{$work->id}}'" >Edit</button>
-    </div>
+          @if($work->has_more_info == 'true')
+          <button class="btn btn-primary mb-1" type="button"
+           onclick="location.href='/hobby-works/show/{{$work->id}}'" >Read more</button>
+          @endif
+
+          <button class="btn btn-primary mb-1" type="button"
+           onclick="location.href='/{{$viewData->editDir}}/edit/{{$work->id}}'" >Edit</button>
+        </div>
+      </div>
+    </div> <!-- /row Buttons-->
+
   </div>
 </div>
 
-<div class="border-bottom"></div>
+<div class="border-bottom mt-3"></div>
 <p></p>
 @endforeach
 
