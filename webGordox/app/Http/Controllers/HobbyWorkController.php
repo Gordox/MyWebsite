@@ -125,6 +125,10 @@ class HobbyWorkController extends Controller
 
     if($request->hasfile('filename'))
     {
+      //Delete the old imgs that is stored img folder
+
+
+      //Add the new imgs
       foreach($request->file('filename') as $image)
       {
         $name=$image->getClientOriginalName();

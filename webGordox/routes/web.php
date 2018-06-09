@@ -20,7 +20,9 @@ Route::get('/hobby-works/show/{id}', 'HobbyWorkController@show');
 Route::get('/professional-works',           'ProWorkController@index');
 Route::get('/professional-works/show/{id}', 'HobbyWorkController@show');
 
-Route::get('/blog',    'BlogWorkController@index');
+Route::get('/blog',           'BlogWorkController@index');
+Route::get('/blog/show/{id}', 'BlogWorkController@show');
+
 Route::get('/resume',  'ResumeController@index');
 Route::get('/contact', 'ContactController@index');
 

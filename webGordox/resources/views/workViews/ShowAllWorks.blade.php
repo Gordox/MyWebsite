@@ -19,8 +19,8 @@
 @foreach($works as $work)
 <div class="row mt-1">
   <!--WORK IMG-->
-  <div class="col-sm-4 text-center">
-    <img class="ml-2" src="{{URL::to('/image_files/work_imgs/')}}/{{json_decode($work->img_url)[0]}}"
+  <div class="col-sm-4 text-center ">
+    <img class="ml-2 imgAllWorks" src="{{URL::to('/image_files/work_imgs/')}}/{{json_decode($work->img_url)[0]}}"
      alt="WORK IMG HERE">
   </div>
 
@@ -34,7 +34,7 @@
 
       <div class="col">
         <p class="float-right mr-2">
-          <?php echo(substr($work->created_at,0, 10));?>
+          {{substr($work->created_at,0, 10)}}
         </p>
       </div>
     </div>

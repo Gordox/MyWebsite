@@ -20,6 +20,25 @@
 
 }
 
+.hide{
+  visibility: hidden;
+  display:none;
+}
+
+.imgAllWorks{
+    max-height:360px;
+    max-width:360px;
+    height:auto;
+    width:auto;
+}
+
+.imgAllBlogs{
+    max-height:150px;
+    max-width:825px;
+    height:auto;
+    width:auto;
+}
+
 @media only screen and (min-width: 600px) {
 
   .Sidescroller{

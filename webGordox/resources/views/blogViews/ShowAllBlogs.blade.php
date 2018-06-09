@@ -5,7 +5,7 @@
 <!-- Page title and add button -->
 <div class="row">
   <div class="col ml-2">
-    <h2>{{$title}}</h2>
+    <h2>{{$viewData->title}}</h2>
   </div>
   <div class="col mt-1 mr-2">
     <button class="btn btn-primary float-right" type="button"
@@ -17,22 +17,31 @@
   <!--Left side-->
   <div class="col-9">
 
-
+    @foreach($blogData as $blog)
     <!--Content-->
     <div class="ml-3 mr-1">
-      <h2>Title</h2>
-      <h6>Date + more</h6>
+      <h2>{{$blog->title}}</h2>
+      <h6>
+        {{substr($blog->created_at,0, 10)}}
+         By: {{$blog->title_description}},
+         Comments: 0
+      </h6>
 
-      <div class="headerImage"></div>
+      <div class="headerImage">
+        <img class="imgAllBlogs" src="{{URL::to('/image_files/blog_imgs/')}}/{{json_decode($blog->img_url)[0]}}"
+         alt="">
+      </div>
+
       <!--Main content here-->
       <div class="row mt-2">
 
         <div class="col-sm-10">
-          <p>Text <br/> me</p>
+          <p><?php echo nl2br($blog->short_description);?></p>
         </div>
 
         <div class="col-sm-2">
-          <button type="button" class="btn btn-primary float-right">Read more</button>
+          <button class="btn btn-primary mb-1" type="button"
+           onclick="location.href='/blog/show/{{$blog->id}}'" >Read more</button>
         </div>
       </div>
 
@@ -40,7 +49,7 @@
       <div class="border-bottom"></div>
       <p></p>
     </div>
-
+    @endforeach
 
   </div>
 

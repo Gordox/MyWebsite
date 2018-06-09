@@ -1,6 +1,3 @@
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
 @extends ('mainSiteMaster')
 @section('content')
 
@@ -96,7 +93,9 @@
        placeholder="Enter short description" rows="2" cols="80"></textarea>
     </div>
 
+    <!-- Image input -->
     <div class="form-group">
+
       <label for="img_url">Add images</label>
       <div class="input-group control-group increment" >
         <input type="file" name="filename[]" class="form-control">
@@ -104,6 +103,7 @@
             <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
           </div>
       </div>
+
       <div class="clone hide">
         <div class="control-group input-group" style="margin-top:10px">
           <input type="file" name="filename[]" class="form-control">
@@ -149,3 +149,5 @@
 
 </script>
 @endsection
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
