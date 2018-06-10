@@ -41,6 +41,9 @@
 
         <div class="col-sm-2">
           <button class="btn btn-primary mb-1" type="button"
+           onclick="location.href='/blog/edit/{{$blog->id}}'" >Edit</button>
+
+          <button class="btn btn-primary mb-1" type="button"
            onclick="location.href='/blog/show/{{$blog->id}}'" >Read more</button>
         </div>
       </div>

@@ -39,6 +39,25 @@
     width:auto;
 }
 
+.iconImg{
+  max-height:50px;
+  max-width:50px;
+  height:auto;
+  width:auto;
+}
+
+.meContactImg{
+  max-height:500px;
+  max-width:350px;
+  height:auto;
+  width:auto;
+}
+.meIndexImg{
+  max-height:300px;
+  max-width:260px;
+  height:auto;
+  width:auto;
+}
 @media only screen and (min-width: 600px) {
 
   .Sidescroller{

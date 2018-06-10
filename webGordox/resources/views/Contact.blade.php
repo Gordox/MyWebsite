@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
   <div class="col ml-2 mr-1">
-    <h2>{{$title}}</h2>
+    <h2>{{$viewData->title}}</h2>
   </div>
   <!-- Add if here with admin auth -->
   <div class="col mt-1 mr-2">
@@ -19,23 +19,23 @@
     <!--link to link, twitter, YouTube etc-->
     <div>
       <a data-provider="mail" target="_blank" href="mailto:{{$anton->email}}?Site%20Mail">
-        <img src="" alt="Email">
+        <img class="iconImg" src="{{URL::to('')}}{{$viewData->mailSRC}}" alt="Email">
       </a>
 
       <a  target="_blank" href="http://www.linkedin.com/in/anton-svensson">
-        <img src="" alt="LinkIn">
+        <img class="iconImg" src="{{URL::to('')}}{{$viewData->linkInSRC}}" alt="LinkIn">
       </a>
 
       <a target="_blank"  href="http://www.twitter.com/DsGordox">
-        <img src="" alt="Twitter">
+        <img class="iconImg" src="{{URL::to('')}}{{$viewData->twitterSRC}}" alt="Twitter">
       </a>
 
       <a target="_blank" href="http://www.youtube.com/antonsvensson94">
-        <img src="" alt="YouTube">
+        <img class="iconImg" src="{{URL::to('')}}{{$viewData->youTubeSRC}}" alt="YouTube">
       </a>
 
       <a target="_blank" href="http://www.github.com/Gordox">
-        <img src="" alt="Github">
+        <img class="iconImg" src="{{URL::to('')}}{{$viewData->gitHubSRC}}" alt="Github">
       </a>
     </div>
   </div>
@@ -48,9 +48,9 @@
     <div class="row">
       <div class="col">
 
-        <img src="{{$anton->img_url}}"
+        <img class="meContactImg mt-1" src="{{URL::to('/image_files/etc_imgs/me')}}/{{json_decode($anton->img_url)[0]}}"
          alt="IMG OF ME">
-        <div class="mt-1">
+        <div class="mt-3">
           <p>Name: {{$anton->name}}</p>
           <p>Email: {{$anton->email}}</p>
           <p>Location: {{$anton->location}}</p>

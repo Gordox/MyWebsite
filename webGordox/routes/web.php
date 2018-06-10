@@ -23,6 +23,8 @@ Route::get('/professional-works/show/{id}', 'HobbyWorkController@show');
 Route::get('/blog',           'BlogWorkController@index');
 Route::get('/blog/show/{id}', 'BlogWorkController@show');
 
+//Add coments
+
 Route::get('/resume',  'ResumeController@index');
 Route::get('/contact', 'ContactController@index');
 
@@ -44,8 +46,9 @@ Route::put('/professional-works/{id}',      'ProWorkController@update');
 Route::delete('/professional-works/{id}',   'ProWorkController@destroy');
 
 //Blog
-Route::get('/blog/create', 'BlogWorkController@create');
-Route::post('/blog', 'BlogWorkController@store');
+Route::get('/blog/create',    'BlogWorkController@create');
+Route::get('/blog/edit/{id}', 'BlogWorkController@edit');
+Route::post('/blog',          'BlogWorkController@store');
 
 //Contact
 Route::get('/contact/edit/me', 'ContactController@edit');

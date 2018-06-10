@@ -11,7 +11,8 @@
 
       <!--Image of me-->
       <div class="col-sm-4">
-        <img src="{{$anton->img_url}}" alt="Error 404, img not found">
+        <img class="meIndexImg" src="{{URL::to('/image_files/etc_imgs/me')}}/{{json_decode($anton->img_url)[0]}}"
+         alt="Error 404, img not found">
       </div>
 
       <!--Bio of me-->

@@ -1,9 +1,24 @@
 @extends('mainSiteMaster')
 @section('content')
-
+@if (count($errors) > 0)
+<div class="alert alert-danger">
+  <strong>Whoops!</strong> There were some problems with your input.<br><br>
+  <ul>
+    @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
+@if(session('success'))
+<div class="alert alert-success">
+  {{ session('success') }}
+</div>
+@endif
 <div class="row">
   <div class="col mb-2">
-    <form class="form-horizontal" role="form" method="POST" action="{{ action('ContactController@update', $anton->id) }}">
+    <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data"
+     action="{{ action('ContactController@update', $anton->id) }}">
     {{ method_field('PUT') }}
     {{ csrf_field() }}
 
@@ -45,8 +60,8 @@
 
         <div class="form-group">
           <label for="img_url">Image</label>
-          <div class="input-group control-group increment" >
-            <input type="file" name="img_url" class="form-control">
+          <div class="input-group control-group" >
+            <input type="file" name="imageFile[]" class="form-control">
           </div>
         </div>
       </div>
@@ -69,3 +84,6 @@
   </div>
 </div>
 @endsection
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>

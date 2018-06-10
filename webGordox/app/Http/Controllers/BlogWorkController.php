@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-    use App\Blog;
+use App\Blog;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -63,21 +63,56 @@ class BlogWorkController extends Controller
 
   public function show($id)
   {
-
+    $blogData = DB::table('blogs')->find($id);
+    return view('blogViews/showBlog', ["blogData" => $blogData]);
   }
 
-  public function edit()
+  public function edit($id)
   {
-
+    $blogData = DB::table('blogs')->find($id);
+    return view('blogViews/editBlog', ["blogData" => $blogData]);
   }
 
-  public function update()
+  public function update(Request $request, $id)
   {
+    $this->validate($request, [
+      'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048']);
 
+    $blog = Blog::find($request->id);
+    $blog->title =             $request->title;
+    $blog->title_description = $request->title_description;
+    $blog->long_description =  $request->long_description;
+    $blog->short_description = $request->short_description;
+    $blog->tags =              $request->tags;
+    $blog->vid_url =           $request->vid_url;
+    $blog->download_url =      $request->download_url;
+
+    if($request->has_download_url == "true")
+      $blog->has_download_url     = false;
+    else
+      $blog->has_download_url     = true;
+
+    if($request->hasfile('filename'))
+    {
+      foreach($request->file('filename') as $image)
+      {
+        $name=$image->getClientOriginalName();
+        $image->move(public_path().'/image_files/blog_imgs/', $name);
+        $data[] = $name;
+      }
+        $blog->img_url= json_encode($data);
+    }
+    else{ $blog->img_url = 'none';}
+
+    $blog->save();
+
+    return redirect()->action('BlogWorkController@index');
   }
 
   public function destroy()
   {
-
+    $blog = Blog::find($id);
+    $blog->delete();
+    return redirect()->action('BlogWorkController@index');
   }
 }
