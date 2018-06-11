@@ -47,16 +47,16 @@
   <div class="col-9">
     <div class="border-bottom"></div>
 
-    <div class="row">
+    <div class="row ">
 
-      <!-- Add commetn here -->
+      <!-- Add comment here -->
       <div class="col">
-        <form class="form-horizontal" role="form" method="POST" action="{{ action('BlogWorkController@store') }}">
+        <form class="form-horizontal" role="form" method="POST" action="{{ action('CommentController@store') }}">
           {{ csrf_field() }}
 
           <div class="form-group">
             <label for="comment">Comment</label>
-            <textarea type="text" class="form-control" id="short_description" name="short_description"
+            <textarea type="text" class="form-control" name="comment"
              placeholder="Enter comment here" rows="3" cols="80"></textarea>
           </div>
 
@@ -65,7 +65,7 @@
 
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                <input type="text" class="form-control" name="name" placeholder="Enter Name">
               </div>
             </div>
 
@@ -73,10 +73,15 @@
 
               <div class="form-group">
                 <label for="name">E-mail</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                <input type="text" class="form-control" name="email" placeholder="Enter e-mail">
               </div>
 
             </div>
+
+            <div class="form-group hide">
+              <input  class="form-control" type="number" name="id" value="{{$blogData->id}}">
+            </div>
+
           </div>
           <input type="submit" value="Commit" class="btn btn-success">
         </form>
@@ -87,6 +92,28 @@
       <!-- All coments here -->
       <div class="col mt-2">
         <p>Comment section:</p>
+
+        @foreach ($blogData->comments as $comment)
+        <div class="row ml-5 mr-5">
+          <div class="col">
+            <div>{{$comment->name}} - {{substr($comment->created_at,0, 10)}}</div>
+            <div class="mt-1 ml-2">{{$comment->comment}}</div>
+
+            <!-- Add admin rights here -->
+            <form action="{{action('CommentController@destroy', $comment->id)}}" method="POST">
+             {{ csrf_field() }}
+
+             <input type="hidden" name="_method" value="DELETE">
+             <button class="btn btn-danger float-right"
+              type="submit"> Delete </button>
+            </form>
+
+          </div>
+        </div>
+        <p></p>
+        @endforeach
+
+
       </div>
 
     </div>

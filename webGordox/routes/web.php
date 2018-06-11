@@ -24,6 +24,7 @@ Route::get('/blog',           'BlogWorkController@index');
 Route::get('/blog/show/{id}', 'BlogWorkController@show');
 
 //Add coments
+Route::post('/blog/show/addComment', 'CommentController@store');
 
 Route::get('/resume',  'ResumeController@index');
 Route::get('/contact', 'ContactController@index');
@@ -49,6 +50,11 @@ Route::delete('/professional-works/{id}',   'ProWorkController@destroy');
 Route::get('/blog/create',    'BlogWorkController@create');
 Route::get('/blog/edit/{id}', 'BlogWorkController@edit');
 Route::post('/blog',          'BlogWorkController@store');
+Route::put('/blog/{id}',      'BlogWorkController@update');
+Route::delete('/blog/{id}',   'BlogWorkController@destroy');
+
+//Comment
+Route::delete('/comment/delete/{id}', 'CommentController@destroy');
 
 //Contact
 Route::get('/contact/edit/me', 'ContactController@edit');

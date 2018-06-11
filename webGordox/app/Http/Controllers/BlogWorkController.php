@@ -63,7 +63,8 @@ class BlogWorkController extends Controller
 
   public function show($id)
   {
-    $blogData = DB::table('blogs')->find($id);
+    $blogData = Blog::with('comments')->find($id);
+    //$blogData = DB::table('blogs')->find($id);
     return view('blogViews/showBlog', ["blogData" => $blogData]);
   }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAntonTable extends Migration
+class CreateCommentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateAntonTable extends Migration
      */
     public function up()
     {
-        Schema::create('anton', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('description');
-            $table->string('age',3);
-            $table->string('code_tags');
-            $table->string('location');
-            $table->string('email');
-            $table->text('img_url');
+            $table->integer('blog_id');
+            $table->string('name',50);
+            $table->text('comment');
+            $table->string('email',100);
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateAntonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anton');
+        Schema::dropIfExists('comment');
     }
 }
