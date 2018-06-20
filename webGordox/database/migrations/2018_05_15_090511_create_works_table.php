@@ -23,6 +23,7 @@ class CreateWorksTable extends Migration
             $table->string('img_url');
             $table->boolean('has_more_info');
             $table->boolean('has_download_url');
+            $table->boolean('on_slider');
             $table->string('vid_url');  //optional use
             $table->string('download_url'); //optional use
             $table->timestamps();

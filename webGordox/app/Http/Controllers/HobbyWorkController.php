@@ -18,7 +18,7 @@ class HobbyWorkController extends Controller
     $viewData->controller = "HobbyWorkController";
     $viewData->editDir = "hobby-works";
 
-    $hobbyworks = DB::table('works')->where('work_type', 'hb')->get();
+    $hobbyworks = DB::table('works')->where('work_type', 'hb')->orderBy('created_at', 'desc')->get();
 
     /*  $test = json_decode($hobbyworks, true);
     echo '<pre>' . print_r($test, true) . '</pre>'; */

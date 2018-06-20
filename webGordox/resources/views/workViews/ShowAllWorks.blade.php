@@ -7,10 +7,10 @@
   </div>
   <div class="col mt-1 mr-2">
     @if($viewData->controller == 'HobbyWorkController')
-    <button class="btn btn-primary float-right" type="button"
+    <button class="btn btn-outline-secondary float-right" type="button"
      onclick="location.href='/hobby-works/create'"> Add work page</button>
     @else
-     <button class="btn btn-primary float-right" type="button"
+     <button class="btn btn-outline-secondary float-right" type="button"
       onclick="location.href='/professional-works/create'"> Add work page</button>
     @endif
   </div>
@@ -51,18 +51,18 @@
     <!-- buttons -->
     <div class="row" >
       <div class="col">
-        <div class="float-right">
+        <div class="float-right mr-2">
 
           @if($work->has_download_url == 'true')
-          <button class="btn btn-primary mb-1" type="button" name="button">Download</button>
+          <button class="btn btn-outline-secondary mb-1" type="button" name="button">Download</button>
           @endif
 
           @if($work->has_more_info == 'true')
-          <button class="btn btn-primary mb-1" type="button"
+          <button class="btn btn-outline-secondary mb-1" type="button"
            onclick="location.href='/hobby-works/show/{{$work->id}}'" >Read more</button>
           @endif
 
-          <button class="btn btn-primary mb-1" type="button"
+          <button class="btn btn-outline-secondary mb-1" type="button"
            onclick="location.href='/{{$viewData->editDir}}/edit/{{$work->id}}'" >Edit</button>
         </div>
       </div>

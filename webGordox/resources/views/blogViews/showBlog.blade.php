@@ -21,7 +21,7 @@
       <p>
         {{substr($blogData->created_at,0, 10)}} -
         by: {{$blogData->title_description}} -
-        Comments: 0
+        Comments: {{sizeOf($blogData->comments)}}
       </p>
     </div>
     <!-- Title img -->

@@ -1,63 +1,92 @@
-.headerImage{
-  background-image: url("http://demos.cryoutcreations.eu/wordpress/fluida/wp-content/uploads/2013/02/jellyfish-698521-1920x250.jpg");
-  background-size: cover;
-  height:150px;
-}
-
-.loginText {
-  text-align: right;
-}
-
+/*Generall design*/
 .no-padding {
   padding:0!important;
 }
-
-.BodyBackground{
-  /*background-color: #595959;*/
-}
-
-.MyFooter{
-
-}
-
 .hide{
   visibility: hidden;
   display:none;
 }
 
+
+
+/*Image design*/
+.headerImage{
+  background-image: url("http://demos.cryoutcreations.eu/wordpress/fluida/wp-content/uploads/2013/02/jellyfish-698521-1920x250.jpg");
+  background-size: cover;
+  height:150px;
+}
 .imgAllWorks{
     max-height:360px;
     max-width:360px;
     height:auto;
     width:auto;
 }
-
 .imgAllBlogs{
     max-height:150px;
     max-width:825px;
     height:auto;
     width:auto;
 }
-
 .iconImg{
   max-height:50px;
   max-width:50px;
   height:auto;
   width:auto;
 }
-
 .meContactImg{
   max-height:500px;
   max-width:350px;
   height:auto;
   width:auto;
 }
-
 .meIndexImg{
   max-height:300px;
   max-width:260px;
   height:auto;
   width:auto;
+}
+.sliderImg{
+  max-height:300px;
+  max-width:530px;
+  height:auto;
+  width:auto;
+}
+
+/*Text design*/
+.loginText {
+  text-align: right;
+}
+h1,h2,h3,h4,h5,h6,label{
+  color: white !important;
+}
+p{
+  color: white !important;
+}
+.Text_White{
+  color: white !important;
+}
+.Text_Black{
+  color: black !important;
+}
+
+/*Colour scheme design*/
+.BodyBackground{
+  background-color: #1a1a1a;
+}
+.ContentColor{
+  background-color: #333333;
+}
+.FoterColor{
+  background-color: #000000;
+}
+.CardColor{
+  background-color: #232323 !important;
+}
+
+/*No category*/
+.MyFooter{
+  position: fixed;
+  bottom: 0;
 }
 
 @media only screen and (min-width: 600px) {

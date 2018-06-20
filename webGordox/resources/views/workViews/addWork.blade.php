@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row mr-1 ml-1">
   <div class="col mb-2">
     @if($controller == 'HobbyWorkController')
       <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ action('HobbyWorkController@store') }}">
@@ -52,7 +52,7 @@
           <div class="col">
             <div class="form-group">
               <label for="work_type">Work type</label>
-              <div>
+              <div class="Text_White">
                 <input type="radio" name="work_type" value="hb" checked> Hobby work<br>
                 <input type="radio" name="work_type" value="pro"> Proffesionall work<br>
                 <input type="radio" name="work_type" value="doc"> Document/Paper<br>
@@ -62,7 +62,7 @@
           <div class="col">
             <div class="form-group">
               <label for="work_type">Have more info</label>
-              <div>
+              <div class="Text_White">
                 <input type="radio" name="has_more_info" value="true"> True<br>
                 <input type="radio" name="has_more_info" value="false" checked> False<br>
               </div>
@@ -71,7 +71,7 @@
           <div class="col">
             <div class="form-group">
               <label for="work_type">Has download url</label>
-              <div>
+              <div class="Text_White">
                 <input type="radio" name="has_download_url" value="true"> True<br>
                 <input type="radio" name="has_download_url" value="false" checked> False<br>
               </div>

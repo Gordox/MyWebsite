@@ -7,7 +7,7 @@
   </div>
   <!-- Add if here with admin auth -->
   <div class="col mt-1 mr-2">
-    <button class="btn btn-primary float-right" type="button"
+    <button class="btn btn-outline-secondary float-right" type="button"
      onclick="location.href='/contact/edit/me'"> Edit profile</button>
   </div>
 

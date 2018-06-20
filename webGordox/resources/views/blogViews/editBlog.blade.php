@@ -101,8 +101,20 @@
       <input type="text" class="form-control" id="download_url" name="download_url" value="{{$blogData->download_url}}">
     </div>
 
-    <input type="submit" value="Save new blog" class="btn btn-success">
+    <div>
+      <input type="submit" value="Save new blog" class="btn btn-success">
+
+      <form action="{{action('BlogWorkController@destroy', $blogData->id)}}" method="POST">
+       {{ csrf_field() }}
+
+       <input type="hidden" name="_method" value="DELETE">
+       <button class="btn btn-danger float-right"
+        type="submit"> Delete </button>
+      </form>
+    </div>
+
    </form>
+
   </div>
 </div>
 

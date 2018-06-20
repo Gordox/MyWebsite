@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Blog;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -13,10 +14,11 @@ class BlogWorkController extends Controller
     $viewData = new \stdClass();
     $viewData->title = "Blog";
 
-    $blogData = DB::table('blogs')->get();
+    $blogData = Blog::with('comments')->orderBy('created_at', 'desc')->get();
 
     return view('blogViews/ShowAllBlogs',["viewData" => $viewData], ["blogData" => $blogData]);
   }
+
 
   public function create()
   {
@@ -110,9 +112,12 @@ class BlogWorkController extends Controller
     return redirect()->action('BlogWorkController@index');
   }
 
-  public function destroy()
+  public function destroy($id)
   {
-    $blog = Blog::find($id);
+    $blog = Blog::with('comments')->find($id);
+    foreach ($blog->comments as $key => $comment) {
+      Comment::find($comment->id)->delete();
+    }
     $blog->delete();
     return redirect()->action('BlogWorkController@index');
   }

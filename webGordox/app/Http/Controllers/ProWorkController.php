@@ -15,9 +15,9 @@ class ProWorkController extends Controller
     $viewData->controller = "ProWorkController";
     $viewData->editDir = "professional-works";
 
-    $proworks = DB::table('works')->where('work_type', 'pro')->get();
-    /*
-     $test = json_decode($proworks, true);
+    $proworks = DB::table('works')->where('work_type', 'pro')->orderBy('created_at', 'desc')->get();
+
+     /*$test = json_decode($proworks, true);
     echo '<pre>' . print_r($test, true) . '</pre>';*/
 
     return view('workViews/ShowAllWorks',["viewData" => $viewData],["works" => $proworks]);

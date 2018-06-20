@@ -145,8 +145,13 @@
       <div>
         <input type="submit" value="Save edit work" class="btn btn-success">
 
-        <button class="btn btn-danger float-right" type="submit"
-         onclick="{{action('HobbyWorkController@destroy', $work->id)}}"> Delete </button>
+        <form action="{{action('HobbyWorkController@destroy', $work->id)}}" method="POST">
+         {{ csrf_field() }}
+
+         <input type="hidden" name="_method" value="DELETE">
+         <button class="btn btn-danger float-right"
+          type="submit"> Delete </button>
+        </form>
       </div>
 
   </form>

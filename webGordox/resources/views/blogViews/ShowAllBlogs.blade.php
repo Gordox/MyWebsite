@@ -8,7 +8,7 @@
     <h2>{{$viewData->title}}</h2>
   </div>
   <div class="col mt-1 mr-2">
-    <button class="btn btn-primary float-right" type="button"
+    <button class="btn btn-outline-secondary float-right" type="button"
      onclick="location.href='/blog/create'">Add blog page</button>
   </div>
 </div>
@@ -24,7 +24,7 @@
       <h6>
         {{substr($blog->created_at,0, 10)}}
          By: {{$blog->title_description}},
-         Comments: 0
+         Comments: {{sizeOf($blog->comments)}}
       </h6>
 
       <div class="headerImage">
@@ -40,10 +40,10 @@
         </div>
 
         <div class="col-sm-2">
-          <button class="btn btn-primary mb-1" type="button"
+          <button class="btn btn-outline-secondary mb-1" type="button"
            onclick="location.href='/blog/edit/{{$blog->id}}'" >Edit</button>
 
-          <button class="btn btn-primary mb-1" type="button"
+          <button class="btn btn-outline-secondary mb-1" type="button"
            onclick="location.href='/blog/show/{{$blog->id}}'" >Read more</button>
         </div>
       </div>
