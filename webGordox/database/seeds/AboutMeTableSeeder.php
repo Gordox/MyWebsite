@@ -11,7 +11,7 @@ class AboutMeTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('anton')->insert([
+      DB::table('antons')->insert([
         [
           "name" => "Anton Svensson",
           "age" => "23",

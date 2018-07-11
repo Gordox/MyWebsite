@@ -15,7 +15,7 @@
   {{ session('success') }}
 </div>
 @endif
-<div class="row">
+<div class="row mr-1 ml-1">
   <div class="col mb-2">
     <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data"
      action="{{ action('ContactController@update', $anton->id) }}">
@@ -79,7 +79,7 @@
     <div class="">
       <input type="submit" value="Save edit" class="btn btn-success">
       <a href="{{ action('ContactController@index')}}"
-         type="button"  class="btn btn-danger">Discard</a>
+         type="button" class="btn btn-danger">Discard</a>
     </div>
   </div>
 </div>

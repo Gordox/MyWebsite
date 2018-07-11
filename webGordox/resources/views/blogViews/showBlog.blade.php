@@ -3,13 +3,15 @@
 @section('content')
 
 <!-- Add admin right here -->
+@if (Auth::check() && Auth::user()->isAdmin())
 <!-- Edit button -->
 <div class="row">
   <div class="col mt-1">
-    <button class="btn btn-primary float-right" type="button"
+    <button class="btn btn-outline-secondary float-right mr-2" type="button"
      onclick="location.href='/blog/edit/{{$blogData->id}}'" >Edit</button>
   </div>
 </div>
+@endif
 
 <div class="row justify-content-center">
 
@@ -95,11 +97,12 @@
 
         @foreach ($blogData->comments as $comment)
         <div class="row ml-5 mr-5">
-          <div class="col">
+          <div class="col Text_White">
             <div>{{$comment->name}} - {{substr($comment->created_at,0, 10)}}</div>
             <div class="mt-1 ml-2">{{$comment->comment}}</div>
 
             <!-- Add admin rights here -->
+            @if (Auth::check() && Auth::user()->isAdmin())
             <form action="{{action('CommentController@destroy', $comment->id)}}" method="POST">
              {{ csrf_field() }}
 
@@ -107,6 +110,7 @@
              <button class="btn btn-danger float-right"
               type="submit"> Delete </button>
             </form>
+            @endif
 
           </div>
         </div>

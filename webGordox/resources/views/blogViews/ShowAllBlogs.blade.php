@@ -7,10 +7,12 @@
   <div class="col ml-2">
     <h2>{{$viewData->title}}</h2>
   </div>
+  @if (Auth::check() && Auth::user()->isAdmin())
   <div class="col mt-1 mr-2">
     <button class="btn btn-outline-secondary float-right" type="button"
      onclick="location.href='/blog/create'">Add blog page</button>
   </div>
+  @endif
 </div>
 
 <div class="row">
@@ -38,11 +40,11 @@
         <div class="col-sm-10">
           <p><?php echo nl2br($blog->short_description);?></p>
         </div>
-
         <div class="col-sm-2">
+        @if (Auth::check() && Auth::user()->isAdmin())
           <button class="btn btn-outline-secondary mb-1" type="button"
            onclick="location.href='/blog/edit/{{$blog->id}}'" >Edit</button>
-
+        @endif
           <button class="btn btn-outline-secondary mb-1" type="button"
            onclick="location.href='/blog/show/{{$blog->id}}'" >Read more</button>
         </div>

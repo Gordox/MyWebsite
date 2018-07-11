@@ -11,6 +11,9 @@
 |
 */
 
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
 //Basic access
 Route::get('/', 'IndexController@index');
 
@@ -27,10 +30,12 @@ Route::get('/blog/show/{id}', 'BlogWorkController@show');
 Route::post('/blog/show/addComment', 'CommentController@store');
 
 Route::get('/resume',  'ResumeController@index');
+
 Route::get('/contact', 'ContactController@index');
 
-//-------------------- Bridge of admin --------------------\\
+//-------------------- Bridge of admin --------------------\k\
 
+Route::group(['middleware' => ['auth', 'admin']], function(){
 //Admin right to these
 //Hobby work
 Route::get('/hobby-works/create',    'HobbyWorkController@create');
@@ -59,3 +64,4 @@ Route::delete('/comment/delete/{id}', 'CommentController@destroy');
 //Contact
 Route::get('/contact/edit/me', 'ContactController@edit');
 Route::put('/contact/edit/me', 'ContactController@update');
+});

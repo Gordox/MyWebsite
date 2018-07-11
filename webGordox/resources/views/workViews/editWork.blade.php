@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row mr-1 ml-1">
   <div class="col mb-2">
 
     @if($controller == 'HobbyWorkController')
@@ -53,38 +53,46 @@
         </div>
 
         <div class="col">
+          <!--First row of bools-->
           <div class="row">
-
-            <!-- Work type -->
             <div class="col">
               <div class="form-group">
                 <label for="work_type">Work type</label>
-                <div>
+                <div class="Text_White">
                   <input type="radio" name="work_type" value="hb" checked> Hobby work<br>
                   <input type="radio" name="work_type" value="pro"> Proffesionall work<br>
                   <input type="radio" name="work_type" value="doc"> Document/Paper<br>
                 </div>
               </div>
             </div>
-
-            <!-- Bool has_more_info -->
             <div class="col">
               <div class="form-group">
-                <label for="work_type">Have more info</label>
-                <div>
+                <label for="work_type">More info page</label>
+                <div class="Text_White">
                   <input type="radio" name="has_more_info" value="true"> True<br>
                   <input type="radio" name="has_more_info" value="false" checked> False<br>
                 </div>
               </div>
             </div>
-
-            <!-- Bool has_download_url -->
             <div class="col">
               <div class="form-group">
-                <label for="work_type">Has download url</label>
-                <div>
+                <label for="work_type">Download url</label>
+                <div class="Text_White">
                   <input type="radio" name="has_download_url" value="true"> True<br>
                   <input type="radio" name="has_download_url" value="false" checked> False<br>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--second row of bools-->
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="work_type">On slider</label>
+                <div class="Text_White">
+                  <input type="radio" name="on_slider" value="true"> True<br>
+                  <input type="radio" name="on_slider" value="false" checked> False<br>
                 </div>
               </div>
             </div>
@@ -144,16 +152,15 @@
       <!-- Submit and Delete buttons -->
       <div>
         <input type="submit" value="Save edit work" class="btn btn-success">
-
-        <form action="{{action('HobbyWorkController@destroy', $work->id)}}" method="POST">
-         {{ csrf_field() }}
-
-         <input type="hidden" name="_method" value="DELETE">
-         <button class="btn btn-danger float-right"
-          type="submit"> Delete </button>
-        </form>
       </div>
+  </form>
 
+  <form action="{{action('HobbyWorkController@destroy', $work->id)}}" method="POST">
+   {{ csrf_field() }}
+
+   <input type="hidden" name="_method" value="DELETE">
+   <button class="btn btn-danger float-right"
+    type="submit"> Delete </button>
   </form>
 
 

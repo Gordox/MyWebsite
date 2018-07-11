@@ -56,6 +56,12 @@ class ProWorkController extends Controller
     else {
       $newWork->has_download_url     = true;
     }
+    if($request->on_slider == "true"){
+      $newWork->on_slider     = false;
+    }
+    else {
+      $newWork->on_slider     = true;
+    }
     $newWork->img_url           = $request->img_url;
     $newWork->vid_url           = $request->vid_url;
     $newWork->download_url      = $request->download_url;
@@ -116,6 +122,12 @@ class ProWorkController extends Controller
     }
     else {
       $work->has_download_url     = true;
+    }
+    if($request->on_slider == "true"){
+      $work->on_slider     = false;
+    }
+    else {
+      $work->on_slider     = true;
     }
     $work->img_url           = $request->img_url;
     $work->vid_url           = $request->vid_url;

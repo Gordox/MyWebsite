@@ -8,8 +8,8 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col mb-2">
+<div class="row mr-1 ml-1">
+  <div class="col mb-2 ">
     <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data"
      action="{{ action('BlogWorkController@update', $blogData->id) }}">
     {{ method_field('PUT') }}
@@ -103,16 +103,15 @@
 
     <div>
       <input type="submit" value="Save new blog" class="btn btn-success">
-
-      <form action="{{action('BlogWorkController@destroy', $blogData->id)}}" method="POST">
-       {{ csrf_field() }}
-
-       <input type="hidden" name="_method" value="DELETE">
-       <button class="btn btn-danger float-right"
-        type="submit"> Delete </button>
-      </form>
     </div>
 
+   </form>
+   <form action="{{action('BlogWorkController@destroy', $blogData->id)}}" method="POST">
+    {{ csrf_field() }}
+
+    <input type="hidden" name="_method" value="DELETE">
+    <button class="btn btn-danger float-right"
+     type="submit"> Delete </button>
    </form>
 
   </div>

@@ -6,10 +6,12 @@
     <h2>{{$viewData->title}}</h2>
   </div>
   <!-- Add if here with admin auth -->
+  @if (Auth::check() && Auth::user()->isAdmin())
   <div class="col mt-1 mr-2">
     <button class="btn btn-outline-secondary float-right" type="button"
      onclick="location.href='/contact/edit/me'"> Edit profile</button>
   </div>
+  @endif
 
 </div>
 

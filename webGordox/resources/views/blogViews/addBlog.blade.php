@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row mr-1 ml-1">
   <div class="col mb-2">
     <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data"
      action="{{ action('BlogWorkController@store') }}">

@@ -5,6 +5,7 @@
   <div class="col ml-2">
     <h2>{{$viewData->title}}</h2>
   </div>
+  @if (Auth::check() && Auth::user()->isAdmin())
   <div class="col mt-1 mr-2">
     @if($viewData->controller == 'HobbyWorkController')
     <button class="btn btn-outline-secondary float-right" type="button"
@@ -14,6 +15,7 @@
       onclick="location.href='/professional-works/create'"> Add work page</button>
     @endif
   </div>
+  @endif
 </div>
 
 @foreach($works as $work)
@@ -62,8 +64,10 @@
            onclick="location.href='/hobby-works/show/{{$work->id}}'" >Read more</button>
           @endif
 
+          @if (Auth::check() && Auth::user()->isAdmin())
           <button class="btn btn-outline-secondary mb-1" type="button"
            onclick="location.href='/{{$viewData->editDir}}/edit/{{$work->id}}'" >Edit</button>
+          @endif
         </div>
       </div>
     </div> <!-- /row Buttons-->

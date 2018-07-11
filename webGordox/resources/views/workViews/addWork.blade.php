@@ -47,6 +47,7 @@
       </div>
 
       <div class="col">
+        <!--First row of bools-->
         <div class="row">
 
           <div class="col">
@@ -61,7 +62,7 @@
           </div>
           <div class="col">
             <div class="form-group">
-              <label for="work_type">Have more info</label>
+              <label for="work_type">More info page</label>
               <div class="Text_White">
                 <input type="radio" name="has_more_info" value="true"> True<br>
                 <input type="radio" name="has_more_info" value="false" checked> False<br>
@@ -70,13 +71,27 @@
           </div>
           <div class="col">
             <div class="form-group">
-              <label for="work_type">Has download url</label>
+              <label for="work_type">Download url</label>
               <div class="Text_White">
                 <input type="radio" name="has_download_url" value="true"> True<br>
                 <input type="radio" name="has_download_url" value="false" checked> False<br>
               </div>
             </div>
           </div>
+        </div>
+
+        <!--second row of bools-->
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="work_type">On slider</label>
+              <div class="Text_White">
+                <input type="radio" name="on_slider" value="true"> True<br>
+                <input type="radio" name="on_slider" value="false" checked> False<br>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
