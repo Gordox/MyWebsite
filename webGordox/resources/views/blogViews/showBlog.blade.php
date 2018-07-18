@@ -28,7 +28,8 @@
     </div>
     <!-- Title img -->
     <div class="headerImage">
-      <img class="imgAllBlogs" src="{{URL::to('/image_files/blog_imgs/')}}/{{json_decode($blogData->img_url)[0]}}">
+      <img class="imgAllBlogs" src="{{URL::to('/image_files/blog_imgs/')}}/{{json_decode($blogData->img_url)[0]}}"
+       alt="">
     </div>
   </div>
 

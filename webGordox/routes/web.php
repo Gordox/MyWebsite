@@ -12,7 +12,7 @@
 */
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/AdminLogin', 'HomeController@index')->name('home');
 
 //Basic access
 Route::get('/', 'IndexController@index');
@@ -33,7 +33,11 @@ Route::get('/resume',  'ResumeController@index');
 
 Route::get('/contact', 'ContactController@index');
 
-//-------------------- Bridge of admin --------------------\k\
+
+Route::get('/resume/edit',  'ResumeController@edit');
+Route::put('/resume/edit',  'ResumeController@update');
+
+//-------------------- Bridge of admin --------------------\\
 
 Route::group(['middleware' => ['auth', 'admin']], function(){
 //Admin right to these

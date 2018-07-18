@@ -60,10 +60,10 @@ class HobbyWorkController extends Controller
       $newWork->has_download_url     = true;
     }
     if($request->on_slider == "true"){
-      $newWork->on_slider     = false;
+      $newWork->on_slider     = true;
     }
     else {
-      $newWork->on_slider     = true;
+      $newWork->on_slider     = false;
     }
     $newWork->img_url           = $request->img_url;
     $newWork->vid_url           = $request->vid_url;
@@ -101,8 +101,6 @@ class HobbyWorkController extends Controller
   public function update(Request $request, $id)
   {
     $this->validate($request, [
-
-                'filename' => 'required',
                 'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -126,12 +124,11 @@ class HobbyWorkController extends Controller
       $work->has_download_url     = true;
     }
     if($request->on_slider == "true"){
-      $work->on_slider     = false;
-    }
-    else {
       $work->on_slider     = true;
     }
-    $work->img_url           = $request->img_url;
+    else {
+      $work->on_slider     = false;
+    }
     $work->vid_url           = $request->vid_url;
     $work->download_url      = $request->download_url;
 
@@ -147,8 +144,8 @@ class HobbyWorkController extends Controller
         $image->move(public_path().'/image_files/work_imgs/', $name);
         $data[] = $name;
       }
+      $work->img_url= json_encode($data);
     }
-    $work->img_url= json_encode($data);
     $work->save();
 
     return redirect()->action('HobbyWorkController@index');

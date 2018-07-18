@@ -61,12 +61,10 @@
   <!--Right side-->
   <div class="col-3 border-left">
     <div class="ml-1 mr-1">
-      <h2 class="text-center border-bottom">Archives</h2>
+      <h2 class="text-center border-bottom"></h2>
       <ul style="list-style-type: none;">
-        <li>April 2018</li>
-        <li>Mars 2018</li>
-        <li>Febuary 2018</li>
-        <li>Januray 2018</li>
+        <li></li>
+
       </ul>
     </div>
   </div>

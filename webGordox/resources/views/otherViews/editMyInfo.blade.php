@@ -61,7 +61,7 @@
         <div class="form-group">
           <label for="img_url">Image</label>
           <div class="input-group control-group" >
-            <input type="file" name="imageFile[]" class="form-control">
+            <input type="file" name="imageFile" class="form-control">
           </div>
         </div>
       </div>

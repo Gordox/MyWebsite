@@ -11,7 +11,7 @@
 
       <!--Image of me-->
       <div class="col-sm-4">
-        <img class="meIndexImg ml-3" src="{{URL::to('/image_files/etc_imgs/me')}}/{{json_decode($viewData->anton->img_url)[0]}}"
+        <img class="meIndexImg ml-3" src="{{URL::to('/image_files/etc_imgs/me')}}/{{$viewData->anton->img_url}}"
          alt="Error 404, img not found">
       </div>
 
@@ -106,11 +106,7 @@
               <h4>{{$work->title}}</h4>
             </p>
 
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-              </div>
-
+            <div class="d-flex justify-content-between align-items-center float-right">
               <small class="text-muted">{{substr($work->created_at,0, 10)}}</small>
             </div>
           </div>

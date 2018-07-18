@@ -99,8 +99,6 @@ class ProWorkController extends Controller
   public function update(Request $request, $id)
   {
     $this->validate($request, [
-
-                'filename' => 'required',
                 'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -129,7 +127,6 @@ class ProWorkController extends Controller
     else {
       $work->on_slider     = true;
     }
-    $work->img_url           = $request->img_url;
     $work->vid_url           = $request->vid_url;
     $work->download_url      = $request->download_url;
 
@@ -141,8 +138,8 @@ class ProWorkController extends Controller
         $image->move(public_path().'/image_files/work_imgs/', $name);
         $data[] = $name;
       }
+      $work->img_url= json_encode($data);
     }
-    $work->img_url= json_encode($data);
     $work->save();
 
     return redirect()->action('ProWorkController@index');

@@ -18,6 +18,16 @@
   @endif
 </div>
 
+<!-- If no work this text will be displayed -->
+@if($works->count() == 0)
+<div class="row mt-1">
+  <div class="col text-center ">
+    <h2>Work has yet to be added, please come back another time</h2>
+  </div>
+</div>
+
+@endif
+
 @foreach($works as $work)
 <div class="row mt-1">
   <!--WORK IMG-->
@@ -75,7 +85,7 @@
   </div>
 </div>
 
-<div class="border-bottom mt-3"></div>
+<div class="border-bottom mt-3 ml-2 mr-2"></div>
 <p></p>
 @endforeach
 

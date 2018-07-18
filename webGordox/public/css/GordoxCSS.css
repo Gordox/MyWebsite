@@ -68,6 +68,14 @@ p{
 .Text_Black{
   color: black !important;
 }
+.FontSize_18{
+  font-size: 18px;
+}
+
+#resumeStyle h1,h2,h3,h4{
+  
+}
+
 
 /*Colour scheme design*/
 .BodyBackground{
@@ -83,11 +91,38 @@ p{
   background-color: #232323 !important;
 }
 
-/*No category*/
-.MyFooter{
-  position: fixed;
-  bottom: 0;
+/*Fix footer at bottom*/
+html,body {
+  height: 100%;
 }
+#wrap {
+  min-height: 100%;
+}
+#main {
+
+  padding-bottom: 40px;
+  /* must be same height as the footer */
+}
+#footer {
+  position: relative;
+  margin-top: -40px;
+  /* negative value of footer height */
+  height: 40px;
+
+}
+
+/* Opera Fix thanks to Maleika (Kohoutec) */
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+  /* thank you Erik J - negate effect of float*/
+}
+
+
+
 
 @media only screen and (min-width: 600px) {
 

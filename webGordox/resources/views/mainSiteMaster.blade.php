@@ -15,87 +15,94 @@
   </head>
 
   <body class="BodyBackground">
-    <!-- Top menu -->
-    <header>
-      <!-- Image & Login-->
-      <div class="container">
-        <div class="row headerImage">
-            <div class="col">
-            </div>
 
-            <!-- Login -->
-            <div class="col-sm-2">
-             <div class="card-img-overlay loginText">
-               <a class="card-title" href="#">Login</a>
-               @if (Route::has('login'))
-                       @if (Auth::check())
+    <div id="wrap">
+      <!-- Top menu -->
+      <header>
+        <!-- Image & Login-->
+        <div class="container">
+          <div class="row headerImage">
+              <div class="col">
+              </div>
 
-                       @else
+              <!-- Login -->
+              <div class="col-sm-2">
+               <div class="card-img-overlay loginText">
 
-                       @endif
-               @endif
+                 @if (Route::has('login'))
+                         @if (Auth::check())
+                         <a class="card-title" href="/AdminLogin">Logout</a>
+                         @else
+                         @endif
+                 @endif
+               </div>
              </div>
-           </div>
-          </div>
-        </div>
-
-      <!--Navbar menu-->
-      <div class="container no-padding">
-          <nav class="navbar navbar-expand-lg " style="background-color: #232323;">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto" >
-                <li class="nav-item">
-                    <a class="nav-link btn-outline-secondary" href="/">Home </a>
-                </li>
-                  <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle btn-outline-secondary" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Works
-                  </a>
-                  <div class="dropdown-menu btn btn-outline-secondary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item btn-outline-secondary" href="/professional-works">Professional work</a>
-                    <a class="dropdown-item btn-outline-secondary" href="/hobby-works">Hobby work</a>
-                    <!-- In Dev face
-                    <a class="dropdown-item" href="#">Papers / Docuemts</a>
-                  -->
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn-outline-secondary" href="/blog">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn-outline-secondary" href="/resume">Resume</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn-outline-secondary" href="/contact">Contact</a>
-                </li>
-              </ul>
             </div>
-          </nav>
-        </div>
-    </header>
+          </div>
 
-    <!-- Content -->
-    <main role="main">
-      <div class="container no-padding ContentColor">
-        @yield('content')
+        <!--Navbar menu-->
+        <div class="container no-padding">
+            <nav class="navbar navbar-expand-lg " style="background-color: #232323;">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto" >
+                  <li class="nav-item">
+                      <a class="nav-link btn-outline-secondary" href="/">Home</a>
+                  </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle btn-outline-secondary" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Works
+                    </a>
+                    <div class="dropdown-menu btn btn-outline-secondary" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item btn-outline-secondary" href="/professional-works">Professional work</a>
+                      <a class="dropdown-item btn-outline-secondary" href="/hobby-works">Hobby work</a>
+                      <!-- In Dev face
+                      <a class="dropdown-item" href="#">Papers / Docuemts</a>
+                    -->
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn-outline-secondary" href="/blog">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn-outline-secondary" href="/resume">Resume</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn-outline-secondary" href="/contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+      </header>
+
+      <div id="main">
+        <!-- Content -->
+        <main role="main">
+          <div class="container no-padding ContentColor">
+            @yield('content')
+          </div>
+        </main>
       </div>
-    </main>
+    </div>
+
+
+
+
+<div id="footer">
 
    <!-- Bottom -->
-    <footer class="text-muted">
+    <footer class="">
       <div class="container no-padding " >
         <div class="FoterColor">
           <div class="row">
             <div class="col ">
               <p class="ml-2">Copyright &copy;2018 By Anton Svensson</p>
             </div>
-            <div class="col">
-              <a href="" class="float-right mr-2">Back to top</a>
-            </div>
           </div>
         </div>
       </div>
     </footer>
+    </div>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

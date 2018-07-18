@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\File;
 use App\Anton;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -20,21 +22,6 @@ class ContactController extends Controller
 
     $anton = Anton::find(1);
     return view('Contact',["viewData" => $viewData], ["anton" => $anton]);
-  }
-
-  public function create()
-  {
-
-  }
-
-  public function store()
-  {
-
-  }
-
-  public function show()
-  {
-
   }
 
   public function edit()
@@ -59,15 +46,14 @@ class ContactController extends Controller
 
     if($request->hasfile('imageFile'))
     {
-      foreach($request->file('imageFile') as $image)
-      {
-        $name=$image->getClientOriginalName();
-        $image->move(public_path().'/image_files/etc_imgs/me', $name);
-        $data[] = $name;
+      $oldImgPath = public_path().'/image_files/etc_imgs/me/'.$anton->img_url;
+      if(file_exists($oldImgPath)){
+        unlink($oldImgPath);
       }
-        $anton->img_url= json_encode($data);
+      $name=$request->imageFile->getClientOriginalName();
+      $request->imageFile->move(public_path().'/image_files/etc_imgs/me', $name);
+      $anton->img_url = $name;
     }
-    else{ }
 
     $anton->save();
 
