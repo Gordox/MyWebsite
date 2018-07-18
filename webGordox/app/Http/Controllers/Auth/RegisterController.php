@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use App\User;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/AdminLogin';
 
     /**
      * Create a new controller instance.
@@ -62,10 +64,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      if(DB::table('users')->count() == 0){
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'admin' => true
         ]);
+      }
+      else{
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'admin' => false
+        ]);
+      }
+
     }
 }
