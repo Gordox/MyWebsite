@@ -24,7 +24,7 @@
         <img class="iconImg" src="{{URL::to('')}}{{$viewData->mailSRC}}" alt="Email">
       </a>
 
-      <a target="_blank" href="http://www.linkedin.com/in/anton-svensson">
+      <a target="_blank" href="http://www.linkedin.com/in/anton-svensson-378274a9">
         <img class="iconImg" src="{{URL::to('')}}{{$viewData->linkInSRC}}" alt="LinkIn">
       </a>
 

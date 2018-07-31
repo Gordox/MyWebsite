@@ -40,12 +40,13 @@
         <div class="col-sm-10">
           <p><?php echo nl2br($blog->short_description);?></p>
         </div>
-        <div class="col-sm-2">
+
+        <div class="col-sm-2 ">
         @if (Auth::check() && Auth::user()->isAdmin())
-          <button class="btn btn-outline-secondary mb-1" type="button"
+          <button class="btn btn-outline-secondary mb-1 float-right" type="button"
            onclick="location.href='/blog/edit/{{$blog->id}}'" >Edit</button>
         @endif
-          <button class="btn btn-outline-secondary mb-1" type="button"
+          <button class="btn btn-outline-secondary  mb-1 float-right" type="button"
            onclick="location.href='/blog/show/{{$blog->id}}'" >Read more</button>
         </div>
       </div>
