@@ -38,13 +38,19 @@ class BlogWorkController extends Controller
     $newBlog->long_description =  $request->long_description;
     $newBlog->short_description = $request->short_description;
     $newBlog->tags =              $request->tags;
-    $newBlog->vid_url =           $request->vid_url;
-    $newBlog->download_url =      $request->download_url;
+
+    if($request->vid_url == null){
+      $newBlog->vid_url = 'null';
+    }else { $newBlog->vid_url = $request->vid_url; }
+
+    if($request->download_url == null){
+      $newBlog->download_url = 'null';
+    } else {$newBlog->download_url = $request->download_url;}
 
     if($request->has_download_url == "true")
-      $newBlog->has_download_url     = false;
+      $newBlog->has_download_url = false;
     else
-      $newBlog->has_download_url     = true;
+      $newBlog->has_download_url = true;
 
     if($request->hasfile('filename'))
     {
@@ -56,7 +62,7 @@ class BlogWorkController extends Controller
       }
       $newBlog->img_url= json_encode($data);
     }
-    else{ $newBlog->img_url = 'none';}
+    else{ $newBlog->img_url = 'null'; }
 
     $newBlog->save();
 
@@ -87,8 +93,12 @@ class BlogWorkController extends Controller
     $blog->long_description =  $request->long_description;
     $blog->short_description = $request->short_description;
     $blog->tags =              $request->tags;
-    $blog->vid_url =           $request->vid_url;
-    $blog->download_url =      $request->download_url;
+
+    if($request->vid_url != null)
+      $blog->vid_url = $request->vid_url;
+
+    if($request->download_url != null)
+      $blog->download_url = $request->download_url;
 
     if($request->has_download_url == "true")
       $blog->has_download_url     = false;

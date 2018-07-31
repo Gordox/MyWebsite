@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <title>Anton's website</title>
     <!--Test website icon-->
-    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    <link rel="icon" href="">
     <!-- My CSS files -->
     <link rel="stylesheet" href="../../css/GordoxCSS.css">
 
@@ -42,22 +43,27 @@
 
         <!--Navbar menu-->
         <div class="container no-padding">
-            <nav class="navbar navbar-expand-lg " style="background-color: #232323;">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #232323 !important;">
+              <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto" >
                   <li class="nav-item">
                       <a class="nav-link btn-outline-secondary" href="/">Home</a>
                   </li>
-                    <li class="nav-item dropdown">
+                  <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle btn-outline-secondary" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Works
                     </a>
-                    <div class="dropdown-menu btn btn-outline-secondary" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item btn-outline-secondary" href="/professional-works">Professional work</a>
-                      <a class="dropdown-item btn-outline-secondary" href="/hobby-works">Hobby work</a>
+                    <div class="dropdown-menu btn" aria-labelledby="navbarDropdownMenuLink" style="background-color: #232323 !important;">
+                      <a class="dropdown-item btn-outline-secondary text-muted" href="/professional-works">Professional work</a>
+                      <a class="dropdown-item btn-outline-secondary text-muted" href="/hobby-works">Hobby work</a>
                       <!-- In Dev face
                       <a class="dropdown-item" href="#">Papers / Docuemts</a>
-                    -->
+                      -->
                     </div>
                   </li>
                   <li class="nav-item">

@@ -11,15 +11,17 @@
 
       <!--Image of me-->
       <div class="col-sm-4">
-        <img class="meIndexImg ml-3" src="{{URL::to('/image_files/etc_imgs/me')}}/{{$viewData->anton->img_url}}"
+        <img class="img-fluid ml-3" src="{{URL::to('/image_files/etc_imgs/me')}}/{{$viewData->anton->img_url}}"
          alt="Error 404, img not found">
       </div>
 
       <!--Bio of me-->
       <div class="col-sm-8">
-        <h5>Hello there</h5>
-        <div class="border rounded" >
-          <p class="ml-2">{{$viewData->anton->description}}</p>
+        <h5>Hello There</h5>
+        <div>
+          <p class="ml-2">
+            <?php echo nl2br($viewData->anton->description);?>
+          </p>
         </div>
 
       </div>

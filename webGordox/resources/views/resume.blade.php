@@ -13,8 +13,7 @@
     <p class="text-center">
       Download:
       <a class="Text_White" href="{{URL::to('/document_files')}}/{{$data->pdf_file}}">pdf</a>
-      <a class="Text_White" href="{{URL::to('/document_files')}}/{{$data->doc_file}}">doc</a><br>
-      adwwd
+      <a class="Text_White" href="{{URL::to('/document_files')}}/{{$data->doc_file}}">doc</a> <br>
     </p>
 
     <div id="resumeStyle">
